@@ -3,9 +3,33 @@
     <h2>Create your flat</h2>
   </div>
 </div>
-<div class="row">
+<div class="row justify-content-center">
+  <div class="col-6">
+    <div class="row">
+      <%= simple_form_for @flat do |f| %>
+      <div class="col-12 mt-2">
+        <%= f.input :name, label: false, placeholder: %{Your flat's name here!} %>
+      </div>
+      <div class="col-12 mt-2">
+        <%= f.input :address, label: false, placeholder: %{Your flat's address here!} %>
+      </div>
+      <div class="col-12 mt-2">
+        <%= f.input :description, label: false, placeholder: %{Give us a brief description of your place}, as: :text %>
+      </div>
+      <div class="row mt-2">
+        <div class="col-6">
+          <%= f.input :price_per_night, label: false, placeholder: %{Price per night} %>
+        </div>
+        <div class="col-6">
+        <%= f.input :number_of_guests, label: false, placeholder: %{Max number of guests} %>
+        </div>
+      </div>
 
+      <div class="col-12 d-flex justify-content-center">
+        <%= f.submit class:'btn btn-primary mt-2'%>
+      </div>
 
-
-
+      <% end %>
+    </div>
+  </div>
 </div>
