@@ -1,7 +1,9 @@
 class FlatsController < ApplicationController
 
-  def index
+  before_action :set_flat, only: %i[show edit update destroy]
 
+  def index
+    @flats = Flat.all
   end
 
   def show
@@ -9,7 +11,7 @@ class FlatsController < ApplicationController
   end
 
   def new
-
+    @flat = Flat.new
   end
 
   def create
@@ -27,4 +29,12 @@ class FlatsController < ApplicationController
   def destroy
 
   end
+
+  private
+
+  def set_flat
+    @flat = Flat.find(params[:id])
+  end
+
+
 end

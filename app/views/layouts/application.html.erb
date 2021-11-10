@@ -10,9 +10,23 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/8af68b1bcc.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="container-fluid bg-light">
+      <div class="row py-2 justify-content-between">
+      <div class="col-3 d-flex align-items-center">
+        <h4 class='m-0'>Simple Airbnb</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center justify-content-end">
+        <%= link_to 'Add Flat', new_flat_path, class:'btn btn-white border-primary text-primary' %>
+      </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
